@@ -161,8 +161,9 @@ div.desc {
   color: #2F4F4F;
 }
 footer {
-  background-color: #877;
-  padding: 20px;
+  background-color: #645;
+  padding: 30px;
+  width:100%;
   text-align: center;
   color: white;
 }

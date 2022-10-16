@@ -160,3 +160,9 @@ div.desc {
 .sidenav a:hover {
   color: #2F4F4F;
 }
+footer {
+  background-color: #877;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}

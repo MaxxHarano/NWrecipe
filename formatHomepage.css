@@ -140,11 +140,11 @@ div.desc {
 .sidenav {
   height: 500px;
   width: 150px;
-  position: fixed;
+  position: relative;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #F0E9EB;
+  background-color: #F6E9EB;
   overflow-x: hidden;
   padding-top: 20px;
 }

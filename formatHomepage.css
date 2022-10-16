@@ -84,9 +84,10 @@ h3.inset {
 }
 div.transbox
 {
-  width:500px;
+  width:400px;
   height:600px;
   margin:30px 50px;
+  display:inline-block;
   background-color:#ffffff;
   text-indent:10px;
   border:1px solid black;
@@ -99,6 +100,11 @@ div.transbox p
   font-weight:bold;
   color:#000000;
 }
+div.sideimage{
+	width:300px;
+	dispaly:inline-block;
+}
+
 div.img {
     margin: 5px;
     border: 1px solid #ccc;

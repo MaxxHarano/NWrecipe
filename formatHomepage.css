@@ -2,6 +2,9 @@
 body {
 	background-color:#F9F8F8;
 	}
+div.background{
+	width:1000px;
+}
 ul {
     list-style-type: none;
     margin: 0;

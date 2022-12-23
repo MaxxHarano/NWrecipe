@@ -220,6 +220,69 @@ function nextPage() {
 		   </div>
 		 </div>
 
+    <script type="text/javascript">
+        onload = function () {
+            function getMsgDate()//得到当前日期
+            {
+                var date = new Date();
+                console.log(date.toString());
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                console.log(day);
+                var msgDate = year + "/" + month + "/" + day;
+                return msgDate;
+            }
+
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            var btn = $("btn");
+
+            btn.onclick = function () {
+                if ($("tar").value == "") {
+                    alert("请输入留言内容!")
+                } else {
+
+                    var ul = $("ul1");
+                    var newLi = document.createElement("li");
+                    var delMsg = "<a href='#' id='delLink'>删除</a>";
+                    var tarValue = $("tar").value;
+                    newLi.innerHTML = tarValue + "-----" + getMsgDate() + "    - -    " + delMsg;
+                    var lis = document.getElementsByTagName("li");
+
+
+                    if (ul.children.length == 0) {//添加新的评论
+                        ul.appendChild(newLi);
+                    } else {
+                        ul.insertBefore(newLi, lis[0]);
+                    }
+                    var delLink = $("delLink");
+                    delLink.onclick = function () {
+                        ul.removeChild(this.parentNode);
+
+                    }
+                    for (i = 0; i < lis.length; i++) {//鼠标悬停行变色
+                        lis[i].onmouseover = function () {
+                            this.style.backgroundColor = "yellow";
+                        }
+                        lis[i].onmouseout = function () {
+                            this.style.backgroundColor = "";
+                        }
+                    }
+                }
+                $("tar").value = "";
+            }
+        }
+    </script>
+
+<textarea id="tar" rows="10" cols="50">
+
+		</textarea><br/>
+<input type="button" id="btn" value="发表评论"></input>
+<ul id="ul1"></ul>
+
 		 <footer>
   		 <p>西北食谱网，站主还在学习中</p>
  		 </footer>

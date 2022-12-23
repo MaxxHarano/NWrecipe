@@ -14,6 +14,72 @@
 		</style>
 	</head>
 	<body>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+                <script src="js/jquery.hammer.min.js" type="text/javascript"></script> 
+		
+<div class="scene">
+  <article class="book">
+    <section class="page active">
+      <div class="front">
+        <h1>Book/Page Flip Effect</h1>
+        <p>A tiny jQuery script to create a mobile-friendly 3D page flip effect.</p>
+      </div>
+      <div class="back">
+        <h1>– 1 –</h1>
+        <p>Page 1</p>
+      </div>
+    </section>
+    <section class="page">
+      <div class="front">
+        <h1>– 2 –</h1>
+        <p>Page 2
+        </p>
+      </div>
+      <div class="back">
+        <h1>– 3 –</h1>
+        <p>Page 3</p>
+      </div>
+    </section>
+      <section class="page">
+      <div class="front">
+        <h1>– 4 –</h1>
+        <p>Page 4</p>
+      </div>
+      <div class="back">
+        <h1>– 5 –</h1>
+        <p>Page 5</p>
+      </div>
+    </section>
+  </article>
+</div>
+		<script>
+var currentPage = 0;
+$('.book')
+.on('click', '.active', nextPage)
+.on('click', '.flipped', prevPage);
+ 
+$('.book').hammer().on("swipeleft", nextPage);
+$('.book').hammer().on("swiperight", prevPage);
+ 
+function prevPage() {
+   
+  $('.flipped')
+    .last()
+    .removeClass('flipped')
+    .addClass('active')
+    .siblings('.page')
+    .removeClass('active');
+}
+function nextPage() {
+   
+  $('.active')
+    .removeClass('active')
+    .addClass('flipped')
+    .next('.page')
+    .addClass('active')
+    .siblings();
+}
+		</script>
 		<h1 <font size="30px" color="#778899"></font>西北食谱网</h1>
 	     <ul>
 	       <li><a class="active" href="#home">主页</a></li>
